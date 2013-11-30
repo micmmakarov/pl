@@ -10,6 +10,11 @@ gem 'haml-rails'
 gem 'angularjs-rails'
 gem 'bootstrap-sass', '~> 3.0.2.0'
 
+gem 'devise'
+gem 'omniauth'
+gem "omniauth-facebook"
+gem "omniauth-twitter"
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 

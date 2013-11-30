@@ -1,3 +1,3 @@
-CLIENT_ID = "226574923986-51t8n9nv59pqnues952jvag12u60nl2t.apps.googleusercontent.com"
-CLIENT_SECRET = "V1D8B-Fkiv5INdBTBoeZXtOA"
+CLIENT_ID = "226574923986-piarv0928u5qe2fij1qm5g03prklivsf.apps.googleusercontent.com"
+CLIENT_SECRET = "C6GZVErRS8dsmwx2yE9mpKmp"
 DEV_KEY = "AI39si4slqGfgUeberggoaTcL2m0IvlUu-wWutuf1JB_NuHOfhFXiSL0EOpPZt1Hie14d7JqgLCSu-cPrr-LdwONWutWdGILAw"

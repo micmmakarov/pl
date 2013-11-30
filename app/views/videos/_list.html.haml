@@ -1,0 +1,6 @@
+.video-list{ng: {controller: "VideoListCtrl", init: "getData(#{@videos.to_json(include: {user: {only: :name}}, methods: [:votes_count, :voted])})"}}
+  .video{ng: {repeat: 'v in videos'}}
+    %img{src: "http://img.youtube.com/vi/{{v.youtube_id}}/mqdefault.jpg"}
+    By {{v.user.name}}
+    Votes: {{v.votes_count}} {{v.voted}}
+    .btn.btn-primary{ng: {click: 'vote(v)'}} vote!

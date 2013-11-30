@@ -1,0 +1,14 @@
+%h1 profile
+%h2 Upload a video
+.row{ng: {controller: "ProfileCtrl"}}
+  = form_tag @upload_info[:url], :multipart => true do
+    = hidden_field_tag :token, @upload_info[:token]
+    .form-group
+      %label.col-sm-2.control-label Upload a file
+      .col-sm-10
+        = file_field_tag :file, class: "form-control"
+    .form-group
+      %label.col-sm-2.control-label{:for => "inputEmail3"}
+      .col-sm-10
+        = submit_tag "Upload video", class: "btn btn-primary"
+

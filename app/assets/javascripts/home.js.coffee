@@ -55,3 +55,31 @@ App.controller "MyVideosCtrl", ["$scope", ($scope) ->
     YTb.player.loadVideoById(id)
 
 ]
+
+App.controller "ProfileCtrl", ["$scope", ($scope) ->
+  $http.post('/api/getyoutube', data).success(->
+  )
+]
+
+App.controller "VideoListCtrl", ["$scope", "$http", ($scope, $http) ->
+
+  $scope.getData = (data) ->
+    $scope.videos = data
+
+  $scope.vote = (v) ->
+    if v.voted?
+      data = {id: v.id}
+      $http
+        method: 'POST'
+        url: "/api/votes/"
+        data: data
+      .success( ->
+        console.log "YES!"
+      )
+    else
+      $http({method: 'DELETE', url: "/api/votes/#{v.id}"}).success( ->
+        console.log "YES!"
+      )
+
+
+]

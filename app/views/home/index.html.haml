@@ -1,15 +1,5 @@
-.row
-  %h1 Home#index
-  %p Find me in app/views/home/index.html.haml
-  .main{ng: {controller: "MyVideosCtrl", init: "getData(#{@videos.to_json})"}}
-    TIME: {{progress}}
-    #player
-      Hahaha
-    %a.btn{ng: {click: 'play()'}} Play
-    %a.btn{ng: {click: 'stop()'}} Stop
-    %a.btn{ng: {click: 'pause()'}} Pause
-    {{1+1}}
-    .video{ng: {repeat: 'video in videos'}}
-      %a{ng: {click: 'load(video.unique_id)'}}
-        %h4 {{video.title}}
-        %img{src: 'http://img.youtube.com/vi/{{video.unique_id}}/0.jpg'}
+%h1 Next week premise: batkid
+.btn.btn-primary Take part
+%a.connect-fb{href: "/auth/facebook", target: "_self"} Login through facebook
+
+=render "videos/list"
