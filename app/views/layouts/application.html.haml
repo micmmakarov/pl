@@ -10,14 +10,5 @@
     %script{:src => "http://www.google.com/jsapi", :type => "text/javascript"}
   %body
     .container
-      .header
-        %ul.nav.nav-pills.pull-right
-          %li.active
-            %a{href: '/'} Option 1
-          %li
-            %a{href: '/'} Option 2
-          %li
-            %a{href: '/'} Option 3
-        %h3.text-muted Playing With Youtube
-
+      = render "layouts/header"
       = yield
