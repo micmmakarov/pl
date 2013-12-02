@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc1'
-gem 'youtube_it', :git => "git@github.com:micmmakarov/youtube_it.git"
+gem 'youtube_it', :github => "micmmakarov/youtube_it"
 gem 'httparty'
 gem 'pry'
 gem 'pry-nav'
