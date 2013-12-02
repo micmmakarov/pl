@@ -4,8 +4,6 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0.rc1'
 gem 'youtube_it', :github => "micmmakarov/youtube_it"
 gem 'httparty'
-gem 'pry'
-gem 'pry-nav'
 gem 'haml-rails'
 gem 'angularjs-rails'
 gem 'bootstrap-sass', '~> 3.0.2.0'
@@ -17,8 +15,10 @@ gem "omniauth-facebook"
 gem "omniauth-twitter"
 
 # Use sqlite3 as the database for Active Record
-group :development do
+group :development, :test do
   gem 'sqlite3'
+  gem 'pry'
+  gem 'pry-nav'
 end
 group :production do
   gem 'pg'
