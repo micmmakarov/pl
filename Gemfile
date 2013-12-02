@@ -9,6 +9,7 @@ gem 'pry-nav'
 gem 'haml-rails'
 gem 'angularjs-rails'
 gem 'bootstrap-sass', '~> 3.0.2.0'
+gem 'underscore-rails'
 
 gem 'devise'
 gem 'omniauth'

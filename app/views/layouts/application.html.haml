@@ -6,9 +6,23 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
     = csrf_meta_tags
+    %meta{:content => "222424071230782", :property => "fb:app_id"}/
 
     %script{:src => "http://www.google.com/jsapi", :type => "text/javascript"}
-  %body
+  %body{ng: {controller: 'GlobalCtrl'}}
+    .fade-block{class: 'shown-{{!!currentVideo}}', ng: {click: 'stop()'}}
+    .player{ng: {show: 'currentVideo'}}
+      %h2 {{currentVideo.user.name}}
+      .video
+        #player
+        .meta
+          .name
+            {{currentVideo.user.name}}
+          .vote{ng: {click: 'vote(currentVideo)'}, class: 'voted-{{currentVideo.voted}}'}
+            {{currentVideo.votes_count}}
+        #facebook-like
+        #twitter-follow
+
     .container
       = render "layouts/header"
       = yield

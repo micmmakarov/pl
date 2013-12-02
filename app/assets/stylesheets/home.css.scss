@@ -1,40 +1,104 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-body {
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.5em;
+@mixin triangle-down($color, $size) {
+  width: 0;
+  height: 0;
+  border-left: $size solid transparent;
+  border-right: $size solid transparent;
+  border-top: $size solid $color;
+  content: '';
+}
+@mixin triangle-up($color, $size) {
+  width: 0;
+  height: 0;
+  border-left: $size solid transparent;
+  border-right: $size solid transparent;
+  border-bottom: $size solid $color;
+  content: '';
 }
 
-.post-sign-in {
-  display: none;
+h2 {
+  font-size: 28px;
 }
 
-.during-upload {
-  display: none;
+.premise {
+  border-top: 1px solid rgba(0,0,0,0.3);
+  border-bottom: 1px solid rgba(0,0,0,0.3);
 }
 
-.post-upload {
-  display: none;
+.video {
+  -webkit-transition: all 0.1s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+  -moz-transition: all 0.1s ease-out;  /* Firefox 4-15 */
+  -o-transition: all 0.1s ease-out;  /* Opera 10.50–12.00 */
+  transition: all 0.1s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+  .image {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center center;
+    cursor: pointer;
+  }
+  &.big {
+    width: 47.4%;
+    float: left;
+  }
+  &.small {
+    width: 23.7%;
+    margin-left: 2.6%;
+    float: right;
+  }
+  .meta {
+    padding-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    position: relative;
+    height: 40px;
+    .vote {
+      position: absolute;
+      right: 0;
+      top: 5px;
+    }
+  }
 }
 
-#channel-name {
-  font-size: 60px;
-  margin-left: 10px;
+.video-block {
+  h2 {
+    margin-bottom: 25px;
+  }
 }
 
-label {
-  display: block;
+.fade-block {
+  -webkit-transition: all 0.1s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+  -moz-transition: all 0.1s ease-out;  /* Firefox 4-15 */
+  -o-transition: all 0.1s ease-out;  /* Opera 10.50–12.00 */
+  transition: all 0.1s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+  opacity: 0;
+  &.shown-true {
+    opacity: 1;
+    z-index: 1;
+  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: -1;
+  content: '';
 }
 
-input[type="text"], textarea, progress {
-  font-size: 0.75em;
-  width: 15em;
-  margin-bottom: 1em;
-  padding: 0.5em;
-  font-family: "Open Sans", sans-serif;
-}
-
-textarea {
-  height: 7em;
+.player {
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+  margin: auto;
+  max-width: 960px;
+  background: white;
+  padding: 10px;
+  .video {
+    width: 60%;
+  }
+  #player {
+    width: 100%;
+  }
 }
