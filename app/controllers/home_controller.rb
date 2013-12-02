@@ -16,6 +16,8 @@ class HomeController < ApplicationController
 
   def index
     @videos = Video.all
-    @videos.current_user = current_user
+    if !@videos.empty?
+      @videos.current_user = current_user
+    end
   end
 end

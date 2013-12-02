@@ -1,7 +1,10 @@
 .header
   %ul.nav.nav-pills.pull-right
-    %li.active
-      %a{href: '/'} Login
+    %li
+      -if user_signed_in?
+        #{current_user.name}
+      -else
+        %a{href: '/'} Login
     %li
       %a{href: '/'} About
-  %h3.text-muted PUNCHLIME
+  %h2 PUNCHLIME

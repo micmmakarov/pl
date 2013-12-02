@@ -129,21 +129,6 @@ App.controller "VideoListCtrl", ["$scope", "$rootScope", "$http", ($scope, $root
     window.iframeGenerator.facebook("comedymichael", "comedymichael", path, params)
     window.iframeGenerator.twitter("michaelmakarov")
 
-  $scope.vote = (v) ->
-    if v.voted?
-      data = {id: v.id}
-      $http
-        method: 'POST'
-        url: "/api/votes/"
-        data: data
-      .success( ->
-        console.log "YES!"
-      )
-    else
-      $http({method: 'DELETE', url: "/api/votes/#{v.id}"}).success( ->
-        console.log "YES!"
-      )
-
 ]
 
 
@@ -151,6 +136,22 @@ App.controller "GlobalCtrl", ["$scope", "$rootScope", "$http", ($scope, $rootSco
   $scope.stop = ->
     YTb.player.stopVideo()
     $rootScope.currentVideo = null
-    window.history.replaceState( {} , 'foo', "/" );
+    window.history.replaceState( {} , 'foo', "/" )
+
+  $scope.vote = (v) ->
+    console.log v.voted
+    data = {id: v.id}
+    $http
+      method: 'POST'
+      url: "/api/votes/"
+      data: data
+    .success( (result) ->
+      if result.destroyed
+        v.votes_count = v.votes_count - 1
+        v.voted = false
+      else
+        v.votes_count = v.votes_count + 1
+        v.voted = true
+    )
 
 ]

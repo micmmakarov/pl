@@ -7,6 +7,7 @@
         .name
           {{videos[0].user.name}}
         .vote{ng: {click: 'vote(videos[0])'}, class: 'voted-{{videos[0].voted}}'}
+          .arrow
           {{videos[0].votes_count}}
     .video-wrap
       .video.small
@@ -15,6 +16,7 @@
           .name
             {{videos[1].user.name}}
           .vote{ng: {click: 'vote(videos[1])'}, class: 'voted-{{videos[1].voted}}'}
+            .arrow
             {{videos[1].votes_count}}
       .video.small
         .image{style: "background-image: url('http://img.youtube.com/vi/{{videos[2].youtube_id}}/hqdefault.jpg')", ng: {click: 'play(videos[2])'}}
@@ -22,6 +24,7 @@
           .name
             {{videos[2].user.name}}
           .vote{ng: {click: 'vote(videos[2])'}, class: 'voted-{{videos[2].voted}}'}
+            .arrow
             {{videos[2].votes_count}}
       .video.small
         .image{style: "background-image: url('http://img.youtube.com/vi/{{videos[3].youtube_id}}/hqdefault.jpg')", ng: {click: 'play(videos[3])'}}
@@ -36,6 +39,7 @@
           .name
             {{videos[4].user.name}}
           .vote{ng: {click: 'vote(videos[4])'}, class: 'voted-{{videos[4].voted}}'}
+            .arrow
             {{videos[4].votes_count}}
 
   %a{href: "/"} see more videos

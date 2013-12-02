@@ -19,6 +19,7 @@
           .name
             {{currentVideo.user.name}}
           .vote{ng: {click: 'vote(currentVideo)'}, class: 'voted-{{currentVideo.voted}}'}
+            .arrow
             {{currentVideo.votes_count}}
         #facebook-like
         #twitter-follow
