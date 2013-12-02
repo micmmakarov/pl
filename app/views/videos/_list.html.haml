@@ -1,5 +1,5 @@
 .video-block
-  %h2 "BART Strike"
+  %h2 "Silly short funny video, yo!"
   .video-list{ng: {controller: "VideoListCtrl", init: "getData(#{@videos.to_json(include: {user: {only: :name}}, methods: [:votes_count, :voted])})"}}
     .video.big
       .image{style: "background-image: url('http://img.youtube.com/vi/{{videos[0].youtube_id}}/hqdefault.jpg')", ng: {click: 'play(videos[0])'}}
