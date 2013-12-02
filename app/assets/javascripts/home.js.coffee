@@ -2,6 +2,14 @@ window.YTb ||= {}
 YTb.App = angular.module('YTapp', [])
 App = YTb.App
 
+$(document).on 'page:load', ->
+  angular.bootstrap($("html"), ['YTapp'])
+  YTb.setImages()
+
+$ ->
+  $(document).trigger "page:load"
+  YTb.setImages()
+
 YTb.getUrlParams = ->
   prmstr = window.location.search.substr(1)
   prmarr = prmstr.split ("&")
@@ -87,17 +95,14 @@ YTb.setImages = ->
 
 YTb.setPlayer = ->
   player = $(".player")
-  console.log player.height()
   player.css
     left: ($(window).width() - player.width()) / 2
     top: ($(window).height() - player.height()) / 2
 
 $ ->
-  YTb.setImages()
   $(window).resize ->
     YTb.setImages()
     YTb.setPlayer()
-
 
 App.controller "ProfileCtrl", ["$scope", ($scope) ->
   $http.post('/api/getyoutube', data).success(->

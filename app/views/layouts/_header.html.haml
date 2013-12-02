@@ -2,9 +2,20 @@
   %ul.nav.nav-pills.pull-right
     %li
       -if user_signed_in?
-        #{current_user.name}
+        .btn-group
+          %button.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+            #{current_user.name}
+            %span.caret
+          %ul.dropdown-menu
+            %li
+              %a{:href => "/profile"} My profile yo
+            %li
+              = link_to "Logout yo", destroy_user_session_path, :method => :delete
+
       -else
-        %a{href: '/'} Login
+        %a.connect-fb{href: "/auth/facebook", target: "_self"} Login thru facebook
+
     %li
       %a{href: '/'} About
-  %h2 PUNCHLIME
+  %a#logo{href: "/"}
+    %h2 PUNCHLIME
