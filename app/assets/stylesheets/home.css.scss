@@ -178,6 +178,13 @@ h2 {
   }
 }
 
+@media only screen and (max-width: 560px) {
+  .video-block .video {
+    width: 100%;
+  }
+
+}
+
 .upload-button {
   margin-top: 50px;
 }
