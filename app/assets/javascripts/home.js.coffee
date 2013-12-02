@@ -101,8 +101,8 @@ YTb.setImages = ->
 YTb.setPlayer = ->
   player = $(".player")
   player.css
-    left: ($(window).width() - player.width()) / 2
-    top: ($(window).height() - player.height()) / 2
+    left: ($(window).width() - player.outerWidth()) / 2
+    top: ($(window).height() - player.outerHeight()) / 2
 
 $ ->
   $(window).resize ->

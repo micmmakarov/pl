@@ -32,6 +32,7 @@
           .name
             {{videos[3].user.name}}
           .vote{ng: {click: 'vote(videos[3])'}, class: 'voted-{{videos[3].voted}}'}
+            .arrow
             {{videos[3].votes_count}}
       .video.small
         .image{style: "background-image: url('http://img.youtube.com/vi/{{videos[4].youtube_id}}/hqdefault.jpg')", ng: {click: 'play(videos[4])'}}
