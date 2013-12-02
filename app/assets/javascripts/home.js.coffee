@@ -5,10 +5,12 @@ App = YTb.App
 $(document).on 'page:load', ->
   angular.bootstrap($("html"), ['YTapp'])
   YTb.setImages()
+  if YTb.youtubeReady == true
+    YTb.getYoutube()
+  #YTb.getYoutube()
 
 $ ->
   $(document).trigger "page:load"
-  YTb.setImages()
 
 YTb.getUrlParams = ->
   prmstr = window.location.search.substr(1)
@@ -29,7 +31,7 @@ tag = document.createElement("script")
 tag.src = "https://www.youtube.com/iframe_api"
 firstScriptTag = document.getElementsByTagName("script")[0]
 firstScriptTag.parentNode.insertBefore tag, firstScriptTag
-window.onYouTubeIframeAPIReady = ->
+YTb.getYoutube = ->
   YTb.player = new YT.Player("player",
     #videoId: "M7lc1UVf-VE"
     playerVars: {rel: 0, modestbranding: 1, showinfo: 0}
@@ -39,30 +41,33 @@ window.onYouTubeIframeAPIReady = ->
   )
   # controls: 0,
 
+window.onYouTubeIframeAPIReady = ->
+  YTb.youtubeReady = true
+  YTb.getYoutube()
+
 onPlayerReady = (event) ->
   #event.target.playVideo()
   player = YTb.player
-  setInterval YTb.updatePlayerInfo, 250
+  #setInterval YTb.updatePlayerInfo, 250
   YTb.whenPlayerReady()
 
 YTb.whenPlayerReady = ->
-  a = 1
+  true
 
 # 5. The API calls this function when the player's state changes.
 #    The function indicates that when playing a video (state=1),
 #    the player should play for six seconds and then stop.
 onPlayerStateChange = (event) ->
-  if event.data is YT.PlayerState.PLAYING and not done
-    done = true
+  true
+  #if event.data is YT.PlayerState.PLAYING and not done
+  #  done = true
 
-stopVideo = ->
-  player.stopVideo()
 
 App.controller "MyVideosCtrl", ["$scope", ($scope) ->
 
   YTb.updatePlayerInfo = ->
-    $scope.$apply ->
-      $scope.progress = YTb.player.getCurrentTime()
+    #$scope.$apply ->
+      #$scope.progress = YTb.player.getCurrentTime()
 
   $scope.getData = (data) ->
     $scope.videos = data.videos
