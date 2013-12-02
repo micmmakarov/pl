@@ -27,6 +27,18 @@ h2 {
   border-bottom: 1px solid rgba(0,0,0,0.1);
   padding: 7px 0px;
   margin-bottom: 20px;
+  h4 {
+    margin-bottom: 0px;
+  }
+  h2 {
+    margin-top: 0px;
+  }
+  .submit {
+    margin-top: 10px;
+  }
+  .star {
+    margin-top: 15px;
+  }
 }
 
 .video {
@@ -164,4 +176,8 @@ h2 {
       text-decoration: none;
     }
   }
+}
+
+.upload-button {
+  margin-top: 50px;
 }
