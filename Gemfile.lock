@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:micmmakarov/youtube_it.git
+  remote: git://github.com/micmmakarov/youtube_it.git
   revision: c58004870b1cf0dc5763fc91d41f9b5495b4a880
   specs:
     youtube_it (2.4.0)
