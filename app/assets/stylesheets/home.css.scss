@@ -64,6 +64,14 @@ h2 {
     margin-left: 2.6%;
     float: right;
   }
+  &.medium {
+    width: 32%;
+    margin-right: 2%;
+    float: left;
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
   .meta {
     padding-top: 5px;
     font-size: 14px;
@@ -106,7 +114,7 @@ h2 {
             display: block;
             margin-top: 2px;
             position: absolute;
-            left: 4px;
+            left: 8px;
             @include triangle-up(black, 8px, 18px);
           }
         }

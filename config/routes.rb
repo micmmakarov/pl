@@ -4,6 +4,7 @@ Yt::Application.routes.draw do
   get "/about" => "home#about"
   get "/uploaded" => "home#uploaded"
   get '/auth/:provider/callback' => 'authentications#create'
+  get '/videos' => "videos#index"
   post "/post" => "home#index"
 
   namespace :api do
