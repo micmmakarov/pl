@@ -15,9 +15,9 @@ class HomeController < ApplicationController
   end
 
   def index
-    @videos = Video.all
-    if !@videos.empty?
-      @videos.current_user = current_user
+    @videos = Video.all.sample(5)
+    if !@videos.empty? && user_signed_in?
+      Video.current_user = current_user
     end
   end
 end

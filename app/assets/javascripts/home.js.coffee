@@ -110,8 +110,11 @@ $ ->
     YTb.setPlayer()
 
 App.controller "ProfileCtrl", ["$scope", ($scope) ->
-  $http.post('/api/getyoutube', data).success(->
-  )
+  #$http.post('/api/getyoutube', data).success(->
+  #)
+  $scope.getVideo = ->
+    $("#file").trigger("click")
+
 ]
 
 App.controller "VideoListCtrl", ["$scope", "$rootScope", "$http", ($scope, $rootScope, $http) ->

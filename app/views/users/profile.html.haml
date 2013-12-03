@@ -1,12 +1,15 @@
 %h1 profile
 %h2 Upload a video
-.row{ng: {controller: "ProfileCtrl"}}
+.row.upload-view{ng: {controller: "ProfileCtrl"}}
   = form_tag @upload_info[:url], :multipart => true do
     = hidden_field_tag :token, @upload_info[:token]
     .form-group
       %label.col-sm-2.control-label Upload a file
       .col-sm-10
         %input#file{type:'file', accept: "video/*;capture=camcorder", name: 'file'}
+        #file-button.btn.btn-success.btn-lg.btn-block{ng: {click: 'getVideo()'}}
+          %span.glyphicon.glyphicon-facetime-video
+          RECORD OR CHOOSE A VIDEO
     .form-group
       %label.col-sm-2.control-label{:for => "inputEmail3"}
       .col-sm-10
