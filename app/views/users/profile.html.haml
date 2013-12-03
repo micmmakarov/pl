@@ -9,7 +9,7 @@
         %input#file{type:'file', accept: "video/*;capture=camcorder", name: 'file'}
         #file-button.btn.btn-success.btn-lg.btn-block{ng: {click: 'getVideo()'}}
           %span.glyphicon.glyphicon-facetime-video
-          RECORD OR CHOOSE A VIDEO
+          {{file||'RECORD OR CHOOSE A VIDEO'}}
     .form-group
       %label.col-sm-2.control-label{:for => "inputEmail3"}
       .col-sm-10

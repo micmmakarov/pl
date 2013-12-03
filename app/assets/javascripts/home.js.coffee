@@ -114,6 +114,9 @@ App.controller "ProfileCtrl", ["$scope", ($scope) ->
   #)
   $scope.getVideo = ->
     $("#file").trigger("click")
+    $("#file").one "change", ->
+      $scope.$apply ->
+        $scope.file = $("#file").val().split('\\').pop();
 
 ]
 
