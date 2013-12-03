@@ -9,8 +9,8 @@
     %meta{:content => "222424071230782", :property => "fb:app_id"}/
 
     %script{:src => "http://www.google.com/jsapi", :type => "text/javascript"}
-  %body{ng: {controller: 'GlobalCtrl'}}
-    .fade-block{class: 'shown-{{!!currentVideo}}', ng: {click: 'stop()'}}
+  %body{ng: {controller: 'GlobalCtrl'}, class: 'burger-{{burgerOpened}}'}
+    .fade-block{class: 'shown-{{!!currentVideo}} shown-{{!!burgerOpened}}', ng: {click: 'stop()'}}
     .player{ng: {show: 'currentVideo'}}
       %h2 {{currentVideo.user.name}}
       .video
@@ -24,6 +24,7 @@
         #facebook-like
         #twitter-follow
 
-    .container
+    .container.header-container
       = render "layouts/header"
+    .container.body-container
       = yield

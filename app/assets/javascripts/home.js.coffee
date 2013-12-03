@@ -150,6 +150,7 @@ App.controller "GlobalCtrl", ["$scope", "$rootScope", "$http", ($scope, $rootSco
     YTb.player.stopVideo()
     $rootScope.currentVideo = null
     window.history.replaceState( {} , 'foo', "/" )
+    $scope.burgerOpened = false
 
   $scope.vote = (v) ->
     console.log v.voted

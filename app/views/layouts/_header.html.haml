@@ -1,6 +1,15 @@
 .header
   %ul.nav.nav-pills.pull-right
-    %li
+    %button.burger{ng: {click: 'burgerOpened=!!!burgerOpened'}}
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    %li{ng: {show: 'burgerOpened'}}
+      .mobile-menu
+        %a{href: '/about'} About
+        %a{:href => "/profile"} My profile yo
+        = link_to "Logout yo", destroy_user_session_path, :method => :delete
+    %li.desktop
       -if user_signed_in?
         .btn-group
           %button.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
@@ -15,7 +24,7 @@
       -else
         %a.connect-fb{href: "/auth/facebook", target: "_self"} Login thru facebook
 
-    %li
+    %li.desktop
       %a{href: '/about'} About
   %a#logo{href: "/"}
     %h2 PUNCHLIME

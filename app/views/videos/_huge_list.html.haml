@@ -1,9 +1,10 @@
-.video-list{ng: {controller: "VideoListCtrl", init: "getData(#{@videos.to_json(include: {user: {only: :name}}, methods: [:votes_count, :voted])})"}}
-  .video.medium{ng: {repeat: 'video in videos'}}
-    .image{style: "background-image: url('http://img.youtube.com/vi/{{video.youtube_id}}/hqdefault.jpg')", ng: {click: 'play(video)'}}
-    .meta
-      .name
-        {{video.user.name}}
-      .vote{ng: {click: 'vote(video)'}, class: 'voted-{{video.voted}}'}
-        .arrow
-        {{video.votes_count}}
+.video-block
+  .video-list{ng: {controller: "VideoListCtrl", init: "getData(#{@videos.to_json(include: {user: {only: :name}}, methods: [:votes_count, :voted])})"}}
+    .video.medium{ng: {repeat: 'video in videos'}}
+      .image{style: "background-image: url('http://img.youtube.com/vi/{{video.youtube_id}}/hqdefault.jpg')", ng: {click: 'play(video)'}}
+      .meta
+        .name
+          {{video.user.name}}
+        .vote{ng: {click: 'vote(video)'}, class: 'voted-{{video.voted}}'}
+          .arrow
+          {{video.votes_count}}
