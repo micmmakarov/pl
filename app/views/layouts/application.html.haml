@@ -12,6 +12,7 @@
   %body{ng: {controller: 'GlobalCtrl'}, class: 'burger-{{burgerOpened}}'}
     .fade-block{class: 'shown-{{!!currentVideo}} shown-{{!!burgerOpened}}', ng: {click: 'stop()'}}
     .player{ng: {show: 'currentVideo'}}
+      %span.glyphicon.glyphicon-remove.close{ng: {click: 'stop()'}}
       %h2 {{currentVideo.user.name}}
       .video
         #player
