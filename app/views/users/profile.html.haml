@@ -6,7 +6,7 @@
     .form-group
       %label.col-sm-2.control-label Upload a file
       .col-sm-10
-        = file_field_tag :file, class: "form-control"
+        %input#file{type:'file', accept: "video/*;capture=camcorder", name: 'file'}
     .form-group
       %label.col-sm-2.control-label{:for => "inputEmail3"}
       .col-sm-10
